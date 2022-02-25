@@ -1,0 +1,20 @@
+import time
+import RPi.GPIO as gp
+
+led = 4
+
+gp.setmode(gp.BCM)
+gp.setup(led, gp.OUT)
+
+
+def main():
+	while True:
+	  gp.output(led, gp.HIGH)
+    time.sleep(1)
+		gp.output(led, gp.LOW)
+    time.sleep(1)
+
+
+
+if '__name__' == '__main__':
+	main()
