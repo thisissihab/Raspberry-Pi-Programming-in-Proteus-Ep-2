@@ -1,0 +1,22 @@
+import time
+import RPi.GPIO as gp
+
+led = 4
+button = 5
+
+gp.setmode(gp.BCM)
+gp.setup(led, gp.OUT)
+gp.setup(button, gp.IN)
+
+
+def main():
+	while True:
+		if gp.input(button):
+			gp.output(led, gp.HIGH)
+		else:
+			gp.output(led, gp.LOW)
+
+
+
+if '__name__' == '__main__':
+	main()
